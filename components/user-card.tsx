@@ -28,13 +28,13 @@ export function UserCard({ user }: UserCardProps) {
     <div className='bg-card border border-border rounded-none p-2 md:p-4 hover:shadow-md transition-shadow'>
       <div className='relative'>
         {/* Profile Image */}
-        <div className='w-full h-24 md:h-48 bg-gray-200 rounded-none mb-2 md:mb-3 overflow-hidden'>
+        <div className='w-full aspect-[4/3] bg-gray-200 rounded-none mb-2 md:mb-3 overflow-hidden'>
           <Image
             src={user.image}
             alt={user.name}
-            width={100}
-            height={100}
-            className='w-full h-full object-cover'
+            fill
+            className='object-cover'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           />
         </div>
 

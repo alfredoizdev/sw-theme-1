@@ -1,0 +1,21 @@
+# Prevent search engine indexing
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
+</IfModule>
+
+# Block access to robots.txt and sitemap.xml
+<Files "robots.txt">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "sitemap.xml">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent access to sensitive files
+<FilesMatch "\.(env|config|ini|log|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch> 

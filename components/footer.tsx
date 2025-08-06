@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 export function Footer() {
   return (
-    <footer className='bg-card text-card-foreground py-8'>
+    <footer className='bg-gray-900 text-white py-8'>
       <div className='max-w-6xl mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {/* App Downloads */}
@@ -30,7 +30,7 @@ export function Footer() {
           {/* Legal Disclaimers */}
           <div className='space-y-4'>
             <h3 className='text-lg font-semibold'>Legal Information</h3>
-            <div className='text-sm text-muted-foreground space-y-2'>
+            <div className='text-sm text-gray-300 space-y-2'>
               <p>
                 This site does not contain sexually explicit images as defined
                 in 18 U.S.C. 2256 and 18 USC 2257(a)-(c).
@@ -46,7 +46,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className='border-t border-border mt-8 pt-6 text-center text-sm text-muted-foreground'>
+        <div className='border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400'>
           <p>&copy; 2024 Swing! All rights reserved.</p>
         </div>
       </div>

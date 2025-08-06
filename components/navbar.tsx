@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { ThemeToggle } from '@/components/theme-toggle'
 import Image from 'next/image'
 
 interface NavbarProps {
@@ -17,7 +18,7 @@ interface NavbarProps {
 
 export function Navbar({ onMenuClick }: NavbarProps) {
   return (
-    <header className='bg-white border-b border-gray-200 px-4 py-3'>
+    <header className='bg-background border-b border-border px-4 py-3'>
       <div className='flex items-center justify-between'>
         {/* Left side - Menu (mobile only) and Logo */}
         <div className='flex items-center space-x-4'>
@@ -42,6 +43,9 @@ export function Navbar({ onMenuClick }: NavbarProps) {
 
         {/* Right side - Notifications and User */}
         <div className='flex items-center space-x-4'>
+          {/* Theme Toggle */}
+          <ThemeToggle />
+
           {/* Messages */}
           <Button
             variant='ghost'

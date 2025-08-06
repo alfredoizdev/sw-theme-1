@@ -13,7 +13,7 @@ export default function HomePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false) // Changed to false to hide sidebar by default
 
   return (
-    <div className='min-h-screen bg-gray-50 flex flex-col'>
+    <div className='min-h-screen bg-background flex flex-col'>
       {/* Navbar */}
       <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 

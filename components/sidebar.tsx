@@ -65,26 +65,26 @@ export function Sidebar({ isOpen, onClose, onOpen }: SidebarProps) {
       )}
 
       <div
-        className={`bg-white border-r border-gray-200 transition-all duration-500 ease-in-out flex flex-col ${
+        className={`bg-background border-r border-border transition-all duration-500 ease-in-out flex flex-col ${
           isOpen ? 'w-64' : 'w-16'
         } md:relative md:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         } fixed md:static left-0 top-0 h-full z-50`}
       >
         {/* Header */}
-        <div className='flex items-center justify-between p-4 border-b border-gray-200'>
+        <div className='flex items-center justify-between p-4 border-b border-border'>
           <div className='flex-1 flex justify-center'>
             {isOpen ? (
-              <h1 className='text-lg font-semibold text-gray-900'>Menu</h1>
+              <h1 className='text-lg font-semibold text-foreground'>Menu</h1>
             ) : (
               <Button
                 variant='ghost'
                 size='sm'
                 onClick={onOpen}
-                className='p-2 rounded-none hover:bg-gray-100 transition-all duration-500 ease-in-out'
+                className='p-2 rounded-none hover:bg-accent transition-all duration-500 ease-in-out'
                 title='Open sidebar'
               >
-                <ChevronRight className='h-6 w-6 text-gray-600' />
+                <ChevronRight className='h-6 w-6 text-muted-foreground' />
               </Button>
             )}
           </div>
@@ -106,7 +106,7 @@ export function Sidebar({ isOpen, onClose, onOpen }: SidebarProps) {
             <Button
               key={item.label}
               variant='ghost'
-              className={`w-full justify-start text-gray-700 hover:text-black hover:bg-gray-100 rounded-none transition-all duration-500 ease-in-out ${
+              className={`w-full justify-start text-foreground hover:text-foreground hover:bg-accent rounded-none transition-all duration-500 ease-in-out ${
                 isOpen ? 'px-3' : 'px-3 justify-center'
               }`}
               title={!isOpen ? item.label : undefined}
@@ -128,12 +128,12 @@ export function Sidebar({ isOpen, onClose, onOpen }: SidebarProps) {
         </nav>
 
         {/* Social Links */}
-        <div className='p-4 border-t border-gray-200 space-y-2'>
+        <div className='p-4 border-t border-border space-y-2'>
           {socialItems.map((item) => (
             <Button
               key={item.label}
               variant='ghost'
-              className={`w-full justify-start text-gray-700 hover:text-black hover:bg-gray-100 rounded-none transition-all duration-500 ease-in-out ${
+              className={`w-full justify-start text-foreground hover:text-foreground hover:bg-accent rounded-none transition-all duration-500 ease-in-out ${
                 isOpen ? 'px-3' : 'px-3 justify-center'
               }`}
               title={!isOpen ? item.label : undefined}
@@ -154,7 +154,7 @@ export function Sidebar({ isOpen, onClose, onOpen }: SidebarProps) {
           ))}
           <Button
             variant='ghost'
-            className={`w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50 rounded-none transition-all duration-500 ease-in-out ${
+            className={`w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10 rounded-none transition-all duration-500 ease-in-out ${
               isOpen ? 'px-3' : 'px-3 justify-center'
             }`}
             title={!isOpen ? 'Logout' : undefined}

@@ -31,7 +31,7 @@ export function ContentSection({
   return (
     <section className='mb-8'>
       <div className='flex items-center justify-between mb-4'>
-        <h2 className='text-lg md:text-xl font-semibold text-gray-900'>
+        <h2 className='text-lg md:text-xl font-semibold text-foreground'>
           {title}
         </h2>
         <div className='flex items-center space-x-2'>
@@ -43,7 +43,7 @@ export function ContentSection({
           <Button
             variant='ghost'
             size='sm'
-            className='text-black hover:text-gray-700 rounded-none'
+            className='text-foreground hover:text-muted-foreground rounded-none'
           >
             More
             <ChevronRight className='h-4 w-4 ml-1' />

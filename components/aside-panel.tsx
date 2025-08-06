@@ -10,9 +10,9 @@ export function AsidePanel() {
   const [activeTab, setActiveTab] = useState<'hot-date' | 'event'>('hot-date')
 
   return (
-    <aside className='w-80 bg-white border-l border-gray-200 p-6 h-full flex flex-col'>
+    <aside className='w-80 bg-background border-l border-border p-6 h-full flex flex-col'>
       {/* Tabs */}
-      <div className='flex space-x-1 mb-6 bg-gray-100 rounded-none p-1'>
+      <div className='flex space-x-1 mb-6 bg-muted rounded-none p-1'>
         <Button
           variant={activeTab === 'hot-date' ? 'default' : 'ghost'}
           size='sm'
@@ -47,7 +47,7 @@ export function AsidePanel() {
       <div className='flex-0 mb-10'>
         {activeTab === 'hot-date' && (
           <div className='space-y-4'>
-            <div className='bg-white border border-gray-200 rounded-none p-4'>
+            <div className='bg-card border border-border rounded-none p-4'>
               <div className='flex items-start space-x-3'>
                 {/* Profile Image */}
                 <div className='w-16 h-16 bg-gray-200 rounded-none overflow-hidden'>
@@ -62,7 +62,7 @@ export function AsidePanel() {
 
                 <div className='flex-1'>
                   {/* Mismatch Message */}
-                  <p className='text-sm text-gray-600 mb-3'>
+                  <p className='text-sm text-muted-foreground mb-3'>
                     Sorry, you do not match their relationship or age
                     requirement.
                   </p>
@@ -70,24 +70,26 @@ export function AsidePanel() {
                   {/* Requirements */}
                   <div className='space-y-1 text-sm'>
                     <div className='flex items-center'>
-                      <User className='h-4 w-4 mr-2 text-gray-500' />
-                      <span className='text-gray-700'>
+                      <User className='h-4 w-4 mr-2 text-muted-foreground' />
+                      <span className='text-foreground'>
                         Interested In: Single Male
                       </span>
                     </div>
                     <div className='flex items-center'>
-                      <Clock className='h-4 w-4 mr-2 text-gray-500' />
-                      <span className='text-gray-700'>Age Range: 30 - 75</span>
+                      <Clock className='h-4 w-4 mr-2 text-muted-foreground' />
+                      <span className='text-foreground'>
+                        Age Range: 30 - 75
+                      </span>
                     </div>
                   </div>
 
                   {/* Date and Location */}
-                  <div className='mt-3 p-2 bg-gray-50 rounded-none'>
-                    <div className='flex items-center text-sm text-gray-600'>
+                  <div className='mt-3 p-2 bg-muted rounded-none'>
+                    <div className='flex items-center text-sm text-muted-foreground'>
                       <Calendar className='h-4 w-4 mr-2' />
                       <span>August 5, 2025</span>
                     </div>
-                    <div className='flex items-center text-sm text-gray-600 mt-1'>
+                    <div className='flex items-center text-sm text-muted-foreground mt-1'>
                       <MapPin className='h-4 w-4 mr-2' />
                       <span>Rosenberg, TX US 38 Mi</span>
                     </div>
@@ -106,8 +108,8 @@ export function AsidePanel() {
         )}
 
         {activeTab === 'event' && (
-          <div className='text-center text-gray-500 py-8'>
-            <Calendar className='h-12 w-12 mx-auto mb-4 text-gray-300' />
+          <div className='text-center text-muted-foreground py-8'>
+            <Calendar className='h-12 w-12 mx-auto mb-4 text-muted-foreground' />
             <p>No events available</p>
           </div>
         )}
@@ -115,7 +117,9 @@ export function AsidePanel() {
 
       {/* Last Event Card - Always visible */}
       <div className='mt-0'>
-        <h3 className='text-lg font-semibold text-gray-900 mb-4'>Last Event</h3>
+        <h3 className='text-lg font-semibold text-foreground mb-4'>
+          Last Event
+        </h3>
         <LastEventCard />
       </div>
     </aside>

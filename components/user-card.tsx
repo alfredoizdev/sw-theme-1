@@ -1,4 +1,4 @@
-import { MapPin, Heart, Clock } from 'lucide-react'
+import { MapPin, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import Image from 'next/image'
@@ -20,12 +20,12 @@ export function UserCard({ user }: UserCardProps) {
     }
   }
 
-  const getRelationshipColor = (relationship: string) => {
+  const getRelationshipColor = () => {
     return 'bg-gray-600'
   }
 
   return (
-    <div className='bg-white border border-gray-200 rounded-none p-2 md:p-4 hover:shadow-md transition-shadow'>
+    <div className='bg-card border border-border rounded-none p-2 md:p-4 hover:shadow-md transition-shadow'>
       <div className='relative'>
         {/* Profile Image */}
         <div className='w-full h-24 md:h-48 bg-gray-200 rounded-none mb-2 md:mb-3 overflow-hidden'>
@@ -55,13 +55,11 @@ export function UserCard({ user }: UserCardProps) {
       {/* User Info */}
       <div className='space-y-1 md:space-y-2'>
         <div className='flex items-center justify-between'>
-          <h3 className='font-medium text-gray-900 truncate text-xs md:text-sm'>
+          <h3 className='font-medium text-card-foreground truncate text-xs md:text-sm'>
             {user.name}
           </h3>
           <Badge
-            className={`${getRelationshipColor(
-              user.relationship
-            )} text-white text-xs px-1 md:px-2 py-0.5 md:py-1`}
+            className={`${getRelationshipColor()} text-white text-xs px-1 md:px-2 py-0.5 md:py-1`}
           >
             <span className='hidden md:inline'>
               {user.relationship.charAt(0).toUpperCase() +
@@ -73,12 +71,12 @@ export function UserCard({ user }: UserCardProps) {
           </Badge>
         </div>
 
-        <div className='flex items-center justify-between text-xs md:text-sm text-gray-600'>
+        <div className='flex items-center justify-between text-xs md:text-sm text-muted-foreground'>
           <span className='flex items-center text-xs md:text-xs'>
             <Clock className='h-3 md:h-4 w-3 md:w-4 mr-0.5 md:mr-1' />
             {user.onlineTime}
           </span>
-          <span className='text-xs text-gray-500 hidden md:block'>
+          <span className='text-xs text-muted-foreground hidden md:block'>
             {user.id}
           </span>
         </div>

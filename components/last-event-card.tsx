@@ -5,8 +5,8 @@ import { Calendar, MapPin, User } from 'lucide-react'
 
 export function LastEventCard() {
   return (
-    <div className='py-4 px-1 border-t border-gray-200'>
-      <div className='bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm'>
+    <div className='py-4 px-1 border-t border-border'>
+      <div className='bg-card rounded-none border border-border overflow-hidden shadow-sm'>
         {/* Image */}
         <div className='relative h-32 w-full'>
           <Image
@@ -24,28 +24,28 @@ export function LastEventCard() {
             <div className='w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center'>
               <User className='w-3 h-3 text-white' />
             </div>
-            <span className='text-sm font-medium text-gray-900'>
+            <span className='text-sm font-medium text-card-foreground'>
               Sarah Johnson
             </span>
           </div>
 
           {/* Event details */}
           <div className='space-y-1 mb-2'>
-            <h4 className='text-sm font-semibold text-gray-900 line-clamp-2'>
+            <h4 className='text-sm font-semibold text-card-foreground line-clamp-2'>
               Weekend Beach Party at Malibu
             </h4>
-            <div className='flex items-center gap-1 text-xs text-gray-500'>
+            <div className='flex items-center gap-1 text-xs text-muted-foreground'>
               <Calendar className='w-3 h-3' />
               <span>Yesterday at 8:30 PM</span>
             </div>
-            <div className='flex items-center gap-1 text-xs text-gray-500'>
+            <div className='flex items-center gap-1 text-xs text-muted-foreground'>
               <MapPin className='w-3 h-3' />
               <span>Malibu Beach, CA</span>
             </div>
           </div>
 
           {/* Description */}
-          <p className='text-xs text-gray-600 line-clamp-3'>
+          <p className='text-xs text-muted-foreground line-clamp-3'>
             Amazing sunset vibes with great company! Perfect weather for a beach
             party. Everyone had such a wonderful time dancing and enjoying the
             ocean breeze.

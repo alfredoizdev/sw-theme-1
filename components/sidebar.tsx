@@ -23,6 +23,7 @@ import {
   ChevronRight,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 interface SidebarProps {
   isOpen: boolean
@@ -129,6 +130,18 @@ export function Sidebar({ isOpen, onClose, onOpen }: SidebarProps) {
 
         {/* Social Links */}
         <div className='p-4 border-t border-border space-y-2'>
+          {/* Theme Toggle */}
+          <div
+            className={`flex items-center ${
+              isOpen ? 'justify-start' : 'justify-center'
+            }`}
+          >
+            <ThemeToggle />
+            {isOpen && (
+              <span className='ml-3 text-foreground text-sm'>Theme</span>
+            )}
+          </div>
+
           {socialItems.map((item) => (
             <Button
               key={item.label}

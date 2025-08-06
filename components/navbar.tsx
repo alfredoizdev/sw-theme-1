@@ -9,7 +9,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { ThemeToggle } from '@/components/theme-toggle'
 import Image from 'next/image'
 
 interface NavbarProps {
@@ -43,9 +42,6 @@ export function Navbar({ onMenuClick }: NavbarProps) {
 
         {/* Right side - Notifications and User */}
         <div className='flex items-center space-x-4'>
-          {/* Theme Toggle */}
-          <ThemeToggle />
-
           {/* Messages */}
           <Button
             variant='ghost'
@@ -62,7 +58,11 @@ export function Navbar({ onMenuClick }: NavbarProps) {
           </Button>
 
           {/* Notifications */}
-          <Button variant='ghost' size='sm' className='p-2 rounded-none'>
+          <Button
+            variant='ghost'
+            size='sm'
+            className='p-2 rounded-none hidden md:block'
+          >
             <Bell className='h-5 w-5' />
           </Button>
 

@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import Image from 'next/image'
+import { ThemeLogo } from './theme-logo'
 
 interface NavbarProps {
   onMenuClick: () => void
@@ -30,13 +30,7 @@ export function Navbar({ onMenuClick }: NavbarProps) {
             <Menu className='h-5 w-5' />
           </Button>
           <div className='flex items-center'>
-            <Image
-              src='/images/logo-color.png'
-              alt='Swing! Logo'
-              width={80}
-              height={80}
-              className='rounded'
-            />
+            <ThemeLogo />
           </div>
         </div>
 
